@@ -3,15 +3,43 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Capsule</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Capsule OBSCURA°</title>
+  <style>
+    body {
+      background: black;
+      color: white;
+      font-family: 'Courier New', Courier, monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .box {
+      background: #111;
+      padding: 2em;
+      border: 1px solid crimson;
+      text-align: center;
+    }
+    h1 {
+      color: crimson;
+    }
+    a.button {
+      display: inline-block;
+      padding: 1em 2em;
+      margin-top: 2em;
+      background: crimson;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Tu veux entrer ?</h1>
-    <p>Ce que tu ressens est réel. Mais ce que tu vas voir... ne l’est peut-être pas.</p>
-    <a href="#"><button>Payer 39€ pour continuer</button></a>
+  <div class="box">
+    <h1>Capsule OBSCURA°</h1>
+    <p>Cette capsule est réservée à ceux qui ont franchi l’ultime frontière.</p>
+    <a class="button" href="https://buy.stripe.com/test_aEUdUw3cD2g2bMI4gg">Je prends la capsule</a>
   </div>
 </body>
 </html>
