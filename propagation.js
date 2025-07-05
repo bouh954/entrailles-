@@ -1,9 +1,7 @@
 
-// Propagation virale OBSCURA°
 setTimeout(() => {
-  const link = document.createElement('a');
-  link.href = 'https://entrailles.vercel.app';
-  link.target = '_blank';
-  link.rel = 'noopener';
-  link.click();
-}, 10000);
+  console.log("Propagation activée...");
+  const random = Math.floor(Math.random() * 3);
+  const destinations = ["chambre.html", "reflet_v2.html", "capsule.html"];
+  window.location = destinations[random];
+}, 12000);
