@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OBSCURA° // Passage Verrouillé</title>
+  <style>
+    body { background:black; color:white; font-family:monospace; text-align:center; padding-top:20vh; }
+    input { padding:1em; width:60%; background:#111; color:white; border:none; border-bottom:2px solid crimson; }
+    button { padding:1em; margin-top:1em; background:crimson; border:none; color:white; cursor:pointer; }
+  </style>
+</head>
+<body>
+  <h1>Enter the Passage Code</h1>
+  <input type="password" id="code" placeholder="••••••••••••">
+  <button onclick="check()">Access</button>
+  <p id="response"></p>
+
+  <script>
+    function check() {
+      const code = document.getElementById('code').value.trim().toLowerCase();
+      if (code === "entrailles") {
+        window.location.href = "https://entrailles.vercel.app/chambre.html";
+      } else {
+        document.getElementById('response').innerText = "Wrong. Try again.";
+      }
+    }
+  </script>
+</body>
+</html>

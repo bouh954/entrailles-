@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>OBSCURA° Live Map</title>
+  <style>
+    html, body { margin:0; height:100%; }
+    #map { height:100%; width:100vw; }
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+  <div id="map"></div>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    var map = L.map('map').setView([0, 0], 2);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap'
+    }).addTo(map);
+
+    var fakePoints = [
+      [48.8566, 2.3522], [40.7128, -74.0060], [35.6895, 139.6917], [51.5074, -0.1278],
+      [34.0522, -118.2437], [-33.8688, 151.2093], [55.7558, 37.6173], [19.4326, -99.1332]
+    ];
+    fakePoints.forEach(function(coord) {
+      L.circle(coord, {radius: 50000, color:'crimson'}).addTo(map);
+    });
+  </script>
+</body>
+</html>

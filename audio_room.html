@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OBSCURA° Audio Room</title>
+  <style>
+    body { background:black; color:white; font-family:monospace; text-align:center; padding-top:10vh; }
+    button { padding:1em; margin:1em; background:crimson; color:white; border:none; cursor:pointer; }
+  </style>
+</head>
+<body>
+  <h1>Speak inside OBSCURA°</h1>
+  <button onclick="startMic()">Activate Voice</button>
+  <p id="log"></p>
+
+  <script>
+    function startMic() {
+      navigator.mediaDevices.getUserMedia({ audio: true })
+        .then(stream => {
+          document.getElementById('log').textContent = "You're being heard.";
+          const audio = new Audio();
+          audio.srcObject = stream;
+          audio.play();
+        })
+        .catch(err => {
+          document.getElementById('log').textContent = "Access denied.";
+        });
+    }
+  </script>
+</body>
+</html>
