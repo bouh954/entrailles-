@@ -1,2 +1,2 @@
 # OBSCURA° ENTRΛILLES IRRÉVERSIBLE
-Version autonome complète.
+Déploiement GitHub Pages officiel.
