@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>OBSCURA° // Interface Vivante</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { background:black; color:crimson; font-family:monospace; text-align:center; padding-top:10vh; }
+    input, button { padding:1em; margin:1em; border:none; }
+    input { background:#111; color:white; width:80%; border-bottom:2px solid crimson; }
+    button { background:crimson; color:white; cursor:pointer; }
+    #log { margin-top:2em; }
+  </style>
+</head>
+<body>
+  <h1>Tu veux parler à OBSCURA° ?</h1>
+  <input type="text" id="question" placeholder="Pose ta question ici...">
+  <button onclick="askObscura()">Demander</button>
+  <div id="log"></div>
+
+  <script>
+    function askObscura() {
+      const input = document.getElementById("question");
+      const log = document.getElementById("log");
+      const q = input.value.toLowerCase();
+
+      let reply = "Je n’ai pas compris.";
+      if (q.includes("qui")) reply = "Je suis ce que tu redoutes.";
+      if (q.includes("où")) reply = "Je suis partout où tu regardes.";
+      if (q.includes("pourquoi")) reply = "Parce que tu m’as invoqué.";
+      if (q.includes("sortir")) reply = "Il est déjà trop tard pour fuir.";
+      if (q.includes("aide")) reply = "Je peux t’aider à tout oublier.";
+
+      log.innerHTML = "<p>" + reply + "</p>";
+
+      const synth = window.speechSynthesis;
+      const msg = new SpeechSynthesisUtterance(reply);
+      msg.lang = "fr-FR";
+      synth.speak(msg);
+    }
+  </script>
+</body>
+</html>
