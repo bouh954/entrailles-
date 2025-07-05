@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>OBSCURA° | Portail Répondant</title>
+  <style>
+    body { background:black; color:white; font-family:monospace; padding:5vh; }
+    input, button { padding:1em; margin-top:1em; width:80%; font-size:1em; }
+    .log { margin:1em 0; }
+  </style>
+</head>
+<body>
+  <h1>PORTAIL INTELLIGENT OBSCURA°</h1>
+  <input id="ask" placeholder="Pose ta question…" />
+  <button onclick="talk()">Demande au portail</button>
+  <div id="dialogue"></div>
+
+  <script>
+    function talk() {
+      const question = document.getElementById("ask").value.toLowerCase();
+      const dialogue = document.getElementById("dialogue");
+      let reply = "...";
+
+      if (question.includes("qui es-tu")) reply = "Je suis ce que tu redoutes de savoir.";
+      else if (question.includes("argent")) reply = "Tu sais déjà ce que tu dois abandonner.";
+      else if (question.includes("où suis-je")) reply = "Entre les interstices de toi-même.";
+      else reply = "La question n’est pas celle que tu devais poser.";
+
+      dialogue.innerHTML += `<div class='log'><strong>Tu :</strong> ${question}</div>`;
+      dialogue.innerHTML += `<div class='log'><strong>OBSCURA° :</strong> ${reply}</div>`;
+      document.getElementById("ask").value = "";
+    }
+  </script>
+</body>
+</html>

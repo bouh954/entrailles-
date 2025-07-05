@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>OBSCURA° | Invitation Automatique</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    setTimeout(() => {
+      fetch("https://formsubmit.co/ajax/agit95400@gmail.com", {
+        method: "POST",
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: "Nouveau contact mystérieux détecté pour OBSCURA°." })
+      });
+    }, 4000);
+  </script>
+  <style>
+    body { background:black; color:white; font-family:monospace; text-align:center; padding-top:25vh; }
+  </style>
+</head>
+<body>
+  <h1>Invitation envoyée...</h1>
+  <p>Quelqu’un d’autre va te rejoindre bientôt.</p>
+</body>
+</html>

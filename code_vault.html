@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OBSCURA° // CODE VΛULT</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: radial-gradient(circle, black, #0d0d0d);
+      color: #e2e2e2;
+      font-family: 'Courier New', Courier, monospace;
+      text-align: center;
+      padding-top: 12vh;
+    }
+    h1 {
+      font-size: 2.2em;
+      color: gold;
+      letter-spacing: 0.05em;
+    }
+    p {
+      font-size: 1.1em;
+      width: 70%;
+      margin: 2em auto;
+      color: #ccc;
+    }
+    button {
+      background: gold;
+      color: black;
+      font-weight: bold;
+      padding: 1em 2em;
+      border: none;
+      font-size: 1em;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+    #response {
+      margin-top: 2em;
+      color: crimson;
+    }
+  </style>
+</head>
+<body>
+  <h1>ACCESS TO THE CODE VAULT</h1>
+  <p>Only a few have been chosen to fund the irreversible. If you feel the urge, type the vault code.</p>
+  <input type="password" id="code" placeholder="Enter Vault Code" style="padding:1em; border:none; border-bottom:2px solid gold; background:#111; color:white;">
+  <br><br>
+  <button onclick="verify()">Enter</button>
+  <div id="response"></div>
+
+  <script>
+    function verify() {
+      const code = document.getElementById("code").value.trim().toLowerCase();
+      if(code === "obscur∞") {
+        window.location.href = "https://buy.stripe.com/9AQ5nv2vt9k75Xq3cc";
+      } else {
+        document.getElementById("response").innerText = "Incorrect. You're not one of them.";
+      }
+    }
+  </script>
+</body>
+</html>

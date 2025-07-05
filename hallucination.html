@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>OBSCURA° | Hallucination</title>
+  <style>
+    body { background:black; color:#eee; font-family:monospace; text-align:center; padding:15vh 5vw; }
+    #hallucination { font-size:1.5em; }
+  </style>
+</head>
+<body>
+  <div id="hallucination">Generating...</div>
+  <script>
+    const phrases = [
+      "They are inside your mirror.",
+      "The password is not what you think.",
+      "Time does not apply here.",
+      "You have already paid. You just forgot.",
+      "Your shadow isn't yours.",
+      "Silence is confirmation."
+    ];
+    document.getElementById("hallucination").innerText =
+      phrases[Math.floor(Math.random() * phrases.length)];
+  </script>
+</body>
+</html>

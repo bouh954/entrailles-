@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OBSCURA° // Voices</title>
+  <style>
+    body { background:#000; color:#0f0; font-family:monospace; padding:2em; }
+    .log { margin-bottom: 1em; }
+  </style>
+</head>
+<body>
+  <h2>Live OBSCURA° interaction feed</h2>
+  <div id="feed"></div>
+
+  <script>
+    const logs = [
+      "Lucia_93: I've just received the Vault code. My hands are shaking.",
+      "AlphaRoth: 7th payment done. I still don't know why.",
+      "TheDeadFather: They're listening. I can feel them.",
+      "VX_Omnix: Who controls the capsule controls the memory.",
+      "no_recall: Payment confirmed. Entry denied. Still waiting.",
+    ];
+    let i = 0;
+    setInterval(() => {
+      const div = document.createElement("div");
+      div.className = "log";
+      div.textContent = logs[i % logs.length];
+      document.getElementById("feed").prepend(div);
+      i++;
+    }, 3000);
+  </script>
+</body>
+</html>
