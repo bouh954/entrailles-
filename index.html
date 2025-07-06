@@ -1,16 +1,48 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ENTRΛILLES</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>ENTRAILLES IRRÉVERSIBLE</title>
+  <style>
+    body {
+      background-color: black;
+      color: red;
+      font-family: 'Courier New', Courier, monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    .hidden { display: none; }
+    button {
+      background: darkred;
+      color: white;
+      padding: 1em 2em;
+      border: none;
+      cursor: pointer;
+      margin-top: 2em;
+      font-size: 1.2em;
+    }
+  </style>
 </head>
 <body>
-  <div id="container" class="intro">
-    <div id="text"></div>
-    <button id="continueBtn" style="display:none;">Je poursuis</button>
-  </div>
-  <script src="script.js"></script>
+  <h1>[ENREGISTREMENT INTERDIT]</h1>
+  <p>ENTRAILLES.</p>
+  <p>Tu n’es pas censé être là.</p>
+  <p>Et pourtant… tu insistes.</p>
+  <button onclick="next()">Je poursuis</button>
+  <audio id="startSound" src="sound/intro.mp3"></audio>
+  <script>
+    function next() {
+      document.getElementById("startSound").play();
+      setTimeout(() => {
+        window.location.href = "reflet.html";
+      }, 3000);
+    }
+  </script>
 </body>
 </html>
