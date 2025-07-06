@@ -1,38 +1,13 @@
 
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <title>OBSCURA° | Rituel Live</title>
-  <style>
-    body { background:black; color:white; font-family:monospace; text-align:center; padding-top:10vh; }
-    #status { margin-top:2em; font-size:1.2em; color:crimson; }
-    button { padding:1em 2em; background:crimson; border:none; font-size:1.1em; cursor:pointer; }
-  </style>
-</head>
-<body>
-  <h1>OBSCURA° | Parle. Il t’écoute.</h1>
-  <button onclick="startRecognition()">Démarrer le Rituel</button>
-  <div id="status">En attente de ta voix...</div>
-
-  <script>
-    function startRecognition() {
-      const status = document.getElementById("status");
-      const recognition = new(window.SpeechRecognition || window.webkitSpeechRecognition)();
-      recognition.lang = 'fr-FR';
-      recognition.start();
-      recognition.onresult = function(event) {
-        const phrase = event.results[0][0].transcript.toLowerCase();
-        if (phrase.includes("obscura") || phrase.includes("j'entre")) {
-          status.innerHTML = "✔️ Récitation validée. Rituel accepté.";
-        } else {
-          status.innerHTML = "❌ Mauvaise incantation. Recommence.";
-        }
-      };
-      recognition.onerror = function() {
-        status.innerHTML = "Erreur vocale. Réessaie.";
-      };
-    }
-  </script>
+<head><meta charset="UTF-8"><title>Rituel d'Activation OBSCURA°</title></head>
+<body style="background:black;color:white;text-align:center;padding-top:20vh;font-family:serif;">
+<h1>🔊 Rituel d’Activation</h1>
+<p>Ne prononcez ces mots qu’une seule fois.</p>
+<blockquote style="font-style:italic;">"Obscura intrat... obscura manet."</blockquote>
+<audio autoplay loop>
+  <source src="https://upload.wikimedia.org/wikipedia/commons/2/29/Dark_Spell.ogg" type="audio/ogg">
+</audio>
 </body>
 </html>

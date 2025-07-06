@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>OBSCURA° | Transactions en direct</title>
+  <style>
+    body { background: black; color: lime; font-family: monospace; padding: 2vh; }
+    .log { margin: .5em 0; animation: blink 3s infinite; }
+    @keyframes blink {
+      0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <h2>💸 Paiements en temps réel</h2>
+  <div id="feed"></div>
+  <script>
+    const noms = ['J. Delacroix', 'A. Nishi', 'M. Carter', 'X. Zhang', 'L. Moreau'];
+    const montants = ['97 €', '147 €', '197 €', '999 €', '333 €'];
+    const pays = ['France', 'Japon', 'É.-U.', 'Corée', 'Allemagne'];
+    function logFake() {
+      const nom = noms[Math.floor(Math.random()*noms.length)];
+      const montant = montants[Math.floor(Math.random()*montants.length)];
+      const lieu = pays[Math.floor(Math.random()*pays.length)];
+      const el = document.createElement('div');
+      el.className = 'log';
+      el.textContent = `✔️ ${nom} vient de payer ${montant} (${lieu})`;
+      document.getElementById('feed').prepend(el);
+    }
+    setInterval(logFake, 4000);
+  </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Propagation OBSCURA°</title>
+<style>
+body { background:black; color:lime; font-family:monospace; padding:10vh; }
+.link { margin:1em; display:block; animation: grow 5s infinite alternate; }
+@keyframes grow { from { font-size:1em; } to { font-size:2em; } }
+</style>
+</head>
+<body>
+<h1>🌐 Propagation OBSCURA° en cours...</h1>
+<div id="links"></div>
+<script>
+let container = document.getElementById('links');
+let count = 0;
+function spawnLink() {
+    let a = document.createElement('a');
+    a.href = "https://entrailles.vercel.app/";
+    a.textContent = "ENTЯΛILLES_" + (++count);
+    a.className = "link";
+    container.appendChild(a);
+}
+setInterval(spawnLink, 1500);
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>OBSCURA° | Connexions Actuelles</title>
+  <style>
+    body { background: black; color: cyan; font-family: monospace; text-align: center; padding-top: 20vh; }
+    #count { font-size: 3em; color: lime; }
+  </style>
+</head>
+<body>
+  <h2>👁️ Visiteurs connectés actuellement</h2>
+  <div id="count">...</div>
+  <script>
+    function randomUsers() {
+      return Math.floor(Math.random() * 17) + 9; // Entre 9 et 25
+    }
+    function update() {
+      document.getElementById("count").textContent = `${randomUsers()} visiteurs`;
+    }
+    setInterval(update, 3000);
+    update();
+  </script>
+</body>
+</html>
